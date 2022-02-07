@@ -7,10 +7,6 @@ from notion_client import Client
 
 notion = Client(auth=os.environ['NOTION_TOKEN'])
 
-def getISBN():
-    isbn = input()
-    return isbn
-
 
 def getJSON(isbn):
     openDB = "https://api.openbd.jp/v1/get?isbn={}&pretty"
@@ -88,15 +84,11 @@ def insertNotion(content):
     }
     )    
 
-    pprint(db)
+    return db
     
 
-# def main():
-#     isbn = getISBN()
-#     content = getJSON(isbn)
-#     insertNotion(content)
-
-
-# if __name__ == "__main__":
-#     main()
+def getBookInfo(isbn):
+    content = getJSON(isbn)
+    db = insertNotion(content)
     
+    return db

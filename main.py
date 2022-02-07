@@ -11,6 +11,8 @@ from linebot.models import (
 )
 import os
 
+from server import getBookInfo
+
 app = Flask(__name__)
 
 #環境変数取得
@@ -40,9 +42,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    isbn = event.message.text
+    db = getBookInfo(isbn)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(db))
 
 
 if __name__ == "__main__":
