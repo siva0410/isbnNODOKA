@@ -46,7 +46,7 @@ def handle_message(event):
     db = getBookInfo(isbn)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(db))
+        TextSendMessage(text="登録したよ！"))
 
 
 if __name__ == "__main__":
