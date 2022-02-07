@@ -91,12 +91,12 @@ def insertNotion(content):
     pprint(db)
     
 
-def main():
-    isbn = getISBN()
-    content = getJSON(isbn)
-    insertNotion(content)
+# def main():
+#     isbn = getISBN()
+#     content = getJSON(isbn)
+#     insertNotion(content)
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
     
