@@ -3,10 +3,11 @@
   ISBN番号を入力すると，[[https://openbd.jp/][openBD]] から書籍情報を取得して
   Notionのデータベースに書籍情報を追加するLINE bot
 
-[[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5215.jpg][example1]]
-[[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5216.jpg][example2]]
-[[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5217.jpg][example3]]
-[[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5218.jpg][example4]]
+  #+ATTR_HTML:
+  [[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5215.jpg]]
+  [[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5216.jpg]]
+  [[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5217.jpg]]
+  [[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5218.jpg]]
 
 ** 使い方
    1. LINE botを友達に追加
