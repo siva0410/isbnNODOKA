@@ -91,4 +91,4 @@ def getBookInfo(isbn):
     content = getJSON(isbn)
     db = insertNotion(content)
     
-    return db
+    return content

@@ -44,21 +44,21 @@ def callback():
 def handle_message(event):
     isbn = event.message.text.strip()
     db = getBookInfo(isbn)
-    sendMessage = """ISBN :isbn
-タイトル：:title
-著者：:author
-出版社：:publisher
-発行年月日：:pubdate
+    sendMessage = """ISBN {0[isbn]}
+タイトル：{0[title]}
+著者：:{0[author]}
+出版社：{0[publisher]}
+発行年月日：{0[pubdate]}
 を登録したよ！
-""", {'isbn': db['properties']['ISBN']['rich_text'][0]['text']['content'],
-      'title': db['properties']['タイトル']['title'][0]['text']['content'],
-      'author': db['properties']['著者']['rich_text'][0]['text']['content'],
-      'publisher': db['properties']['出版社']['select']['name'],
-      'pubdate': db['properties']['発行年月日']['date']['start'],
-}
+""".format({'isbn': db[0]["summary"]["isbn"],
+      'title': db[0]["summary"]["title"],
+      'author': db[0]["summary"]["author"],
+      'publisher': db[0]["summary"]["publisher"],
+      'pubdate': db[0]["summary"]["pubdate"]
+})
     line_bot_api.reply_message(
         event.reply_token,
-        [TextSendMessage(text=sendMessage), TextSendMessage(text=db['properties']['表紙']['files'][0]['external']['url'])]
+        [TextSendMessage(text=sendMessage), TextSendMessage(text=db[0]["summary"]["cover"])]
     )
 
 
