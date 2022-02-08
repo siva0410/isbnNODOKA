@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
+    MessageEvent, TextMessage, TextSendMessage, ImageMessage, ImageSendMessage
 )
 import os
 
@@ -49,7 +49,6 @@ def handle_message(event):
 著者：:{0[author]}
 出版社：{0[publisher]}
 発行年月日：{0[pubdate]}
-を登録したよ！
 """.format({'isbn': db[0]["summary"]["isbn"],
       'title': db[0]["summary"]["title"],
       'author': db[0]["summary"]["author"],
@@ -58,8 +57,8 @@ def handle_message(event):
 })
     line_bot_api.reply_message(
         event.reply_token,
-        [TextSendMessage(text=sendMessage), TextSendMessage(text=db[0]["summary"]["cover"])]
-    )
+        [TextSendMessage(text=sendMessage+"を登録したよ！"), ImageSendMessage(original_content_url=db[0]["summary"]["cover"], preview_image_url=db[0]["summary"]["cover"])]
+    )    
 
 
 if __name__ == "__main__":
