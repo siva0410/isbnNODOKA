@@ -1,3 +1,17 @@
-* Notionに書籍情報を追加するやつ
-  ISBN番号を入力すると，openBDから書籍情報を所得して
-  Notionの書籍データベースに追加
+* isbnNODOKA
+** 概要
+  ISBN番号を入力すると，[[https://openbd.jp/][openBD]] から書籍情報を取得して
+  Notionのデータベースに書籍情報を追加するLINE bot
+
+[[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5215.jpg][example1]]
+[[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5216.jpg][example2]]
+[[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5217.jpg][example3]]
+[[https://github.com/siva0410/isbnNODOKA/blob/main/images/IMG_5218.jpg][example4]]
+
+** 使い方
+   1. LINE botを友達に追加
+   2. LINE botにISBN番号を送信
+   3. Notionを確認
+
+** LICENSE
+   MIT LICENSE
